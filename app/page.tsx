@@ -7,7 +7,7 @@ import HowItWorks from "@/components/HowItWorks";
 import AppShowcase from "@/components/AppShowcase";
 import WhyAquaBuddy from "@/components/WhyAquaBuddy";
 import TechStack from "@/components/TechStack";
-import Engineering from "@/components/Engineering";
+// import Engineering from "@/components/Engineering";
 import FutureImprovements from "@/components/FutureImprovements";
 import Highlights from "@/components/Highlights";
 import DeveloperNote from "@/components/DeveloperNote";
@@ -27,7 +27,7 @@ export default function Home() {
                 <AppShowcase />
                 <WhyAquaBuddy />
                 <TechStack />
-                <Engineering />
+                {/* <Engineering /> */}
                 <FutureImprovements />
                 <Highlights />
                 <DeveloperNote />
