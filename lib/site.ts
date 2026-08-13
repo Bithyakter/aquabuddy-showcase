@@ -3,10 +3,9 @@ export const site = {
     tagline: "A smarter way to stay hydrated every day.",
     description:
         "AquaBuddy is a desktop hydration companion for Windows — a character that walks onto your screen with a friendly reminder, instead of another notification you'll dismiss without reading.",
-    // Placeholder until a custom domain is attached in Vercel — update this
-    // one constant and every metadata/sitemap/OG reference below follows.
     url: "https://aquabuddy-showcase.vercel.app",
     githubUrl: "https://github.com/Bithyakter/aqua-buddy",
+    downloadUrl: "https://github.com/Bithyakter/aqua-buddy/releases/tag/v1.1.1",
     author: {
         name: "Bithy Akter",
         portfolioUrl: "https://bithys-portfolio.vercel.app"

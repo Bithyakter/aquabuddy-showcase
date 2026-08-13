@@ -23,7 +23,7 @@ const distractions = [
 
 export default function Problem() {
     return (
-        <section className="border-t border-line/60 bg-ink-2 py-24 sm:py-32">
+        <section className="border-t border-line/60 bg-canvas-alt py-24 sm:py-32">
             <Container className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                 <SectionHeading
                     eyebrow="The Problem"

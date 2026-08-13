@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Container from "./ui/Container";
 import { GitHubMark } from "./ui/icons";
+import ThemeToggle from "./ThemeToggle";
 import { navItems } from "@/data/nav";
 import { site } from "@/lib/site";
 
@@ -20,7 +21,7 @@ export default function Navbar() {
     return (
         <header
             className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-                scrolled ? "border-b border-line/70 bg-ink/80 backdrop-blur-lg" : "border-b border-transparent"
+                scrolled ? "border-b border-line/70 bg-canvas/80 backdrop-blur-lg" : "border-b border-transparent"
             }`}
         >
             <Container className="flex h-18 items-center justify-between py-3">
@@ -41,15 +42,18 @@ export default function Navbar() {
                     ))}
                 </nav>
 
-                <a
-                    href={site.githubUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-sm font-medium text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"
-                >
-                    <GitHubMark size={16} />
-                    <span className="hidden sm:inline">GitHub</span>
-                </a>
+                <div className="flex items-center gap-3">
+                    <ThemeToggle />
+                    <a
+                        href={site.githubUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-sm font-medium text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"
+                    >
+                        <GitHubMark size={16} />
+                        <span className="hidden sm:inline">GitHub</span>
+                    </a>
+                </div>
             </Container>
         </header>
     );

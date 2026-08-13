@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, Inter, JetBrains_Mono } from "next/font/google";
 import { site } from "@/lib/site";
+import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 const sora = Sora({
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     return (
         <html
             lang="en"
+            suppressHydrationWarning
             className={`${sora.variable} ${inter.variable} ${jetbrainsMono.variable}`}
         >
             <head>
@@ -92,8 +94,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
             </head>
-            <body className="min-h-screen bg-ink font-body text-text-primary antialiased">
-                {children}
+            <body className="min-h-screen bg-canvas font-body text-text-primary antialiased">
+                <ThemeProvider>{children}</ThemeProvider>
             </body>
         </html>
     );

@@ -51,7 +51,7 @@ export default function AppShowcase() {
     const scene = scenes[active];
 
     return (
-        <section id="showcase" className="border-t border-line/60 bg-ink-2 py-24 sm:py-32">
+        <section id="showcase" className="border-t border-line/60 bg-canvas-alt py-24 sm:py-32">
             <Container>
                 <SectionHeading
                     eyebrow="Application Showcase"
@@ -67,7 +67,7 @@ export default function AppShowcase() {
                             onClick={() => setActive(key)}
                             className={`flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                                 active === key
-                                    ? "bg-aqua-400 text-ink"
+                                    ? "bg-aqua-400 text-on-accent"
                                     : "text-text-secondary hover:text-text-primary"
                             }`}
                         >

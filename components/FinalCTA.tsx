@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import Container from "./ui/Container";
 import Reveal from "./ui/Reveal";
 import { GitHubMark } from "./ui/icons";
@@ -32,8 +32,17 @@ export default function FinalCTA() {
 
                 <Reveal delay={0.2} className="mt-9 flex flex-wrap items-center justify-center gap-4">
                     <a
+                        href={site.downloadUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="group flex items-center gap-2 rounded-full bg-aqua-400 px-6 py-3 text-sm font-semibold text-on-accent shadow-lg shadow-aqua-500/40 ring-2 ring-aqua-400/30 ring-offset-2 ring-offset-canvas transition-transform hover:scale-[1.03] hover:bg-aqua-300"
+                    >
+                        <Download size={16} />
+                        Download for Windows
+                    </a>
+                    <a
                         href="#top"
-                        className="group flex items-center gap-2 rounded-full bg-aqua-400 px-6 py-3 text-sm font-semibold text-ink transition-transform hover:scale-[1.03] hover:bg-aqua-300"
+                        className="group flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"
                     >
                         Explore Project
                         <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
@@ -42,10 +51,10 @@ export default function FinalCTA() {
                         href={site.githubUrl}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"
+                        className="flex items-center gap-2 px-2 py-3 text-sm font-semibold text-text-secondary transition-colors hover:text-text-primary"
                     >
                         <GitHubMark size={16} />
-                        View GitHub
+                        GitHub
                     </a>
                     {/* <a
                         href={site.author.portfolioUrl}

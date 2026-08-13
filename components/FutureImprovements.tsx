@@ -6,7 +6,7 @@ import { futureIdeas } from "@/data/future";
 
 export default function FutureImprovements() {
     return (
-        <section className="border-t border-line/60 bg-ink-2 py-24 sm:py-32">
+        <section className="border-t border-line/60 bg-canvas-alt py-24 sm:py-32">
             <Container className="max-w-3xl">
                 <SectionHeading
                     eyebrow="Future Ideas"

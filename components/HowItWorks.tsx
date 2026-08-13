@@ -18,7 +18,7 @@ export default function HowItWorks() {
 
                     {workflow.map((item, i) => (
                         <Reveal key={item.step} delay={i * 0.1} className="relative">
-                            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-aqua-400/40 bg-ink font-data text-sm font-semibold text-aqua-300">
+                            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-aqua-400/40 bg-canvas font-data text-sm font-semibold text-aqua-300">
                                 {item.step}
                             </div>
                             <h3 className="mt-5 font-display text-lg font-semibold text-text-primary">

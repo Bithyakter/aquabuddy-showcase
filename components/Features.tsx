@@ -27,7 +27,7 @@ const iconMap: Record<Feature["icon"], LucideIcon> = {
 
 export default function Features() {
     return (
-        <section id="features" className="border-t border-line/60 bg-ink-2 py-24 sm:py-32">
+        <section id="features" className="border-t border-line/60 bg-canvas-alt py-24 sm:py-32">
             <Container>
                 <SectionHeading
                     eyebrow="Core Features"

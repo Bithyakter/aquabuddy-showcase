@@ -10,6 +10,7 @@ import TechStack from "@/components/TechStack";
 // import Engineering from "@/components/Engineering";
 import FutureImprovements from "@/components/FutureImprovements";
 import Highlights from "@/components/Highlights";
+import DeveloperNote from "@/components/DeveloperNote";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -29,6 +30,7 @@ export default function Home() {
                 {/* <Engineering /> */}
                 <FutureImprovements />
                 <Highlights />
+                <DeveloperNote />
                 <FinalCTA />
             </main>
             <Footer />

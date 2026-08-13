@@ -5,7 +5,7 @@ import { techStack } from "@/data/techStack";
 
 export default function TechStack() {
     return (
-        <section id="tech-stack" className="border-t border-line/60 bg-ink-2 py-24 sm:py-32">
+        <section id="tech-stack" className="border-t border-line/60 bg-canvas-alt py-24 sm:py-32">
             <Container>
                 <SectionHeading
                     eyebrow="Technology Stack"
@@ -25,7 +25,7 @@ export default function TechStack() {
                                     {group.items.map((item) => (
                                         <span
                                             key={item}
-                                            className="rounded-lg border border-line bg-ink/60 px-2.5 py-1 font-data text-xs text-text-primary"
+                                            className="rounded-lg border border-line bg-canvas/60 px-2.5 py-1 font-data text-xs text-text-primary"
                                         >
                                             {item}
                                         </span>

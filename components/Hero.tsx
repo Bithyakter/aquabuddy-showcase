@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Download } from "lucide-react";
 import Container from "./ui/Container";
 import { GitHubMark } from "./ui/icons";
 import { site } from "@/lib/site";
@@ -15,10 +15,10 @@ export default function Hero() {
                 <div className="absolute left-1/2 top-[-10%] h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-aqua-500/20 blur-[120px] animate-drift" />
                 <div className="absolute right-[8%] top-[30%] h-[320px] w-[320px] rounded-full bg-coral-500/10 blur-[100px]" />
                 <div
-                    className="absolute inset-0 opacity-[0.05]"
+                    className="absolute inset-0 opacity-[0.06] dark:opacity-[0.05]"
                     style={{
                         backgroundImage:
-                            "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
+                            "linear-gradient(to right, var(--color-text-primary) 1px, transparent 1px), linear-gradient(to bottom, var(--color-text-primary) 1px, transparent 1px)",
                         backgroundSize: "56px 56px"
                     }}
                 />
@@ -72,17 +72,20 @@ export default function Hero() {
                         className="mt-9 flex flex-wrap items-center gap-4"
                     >
                         <a
+                            href={site.downloadUrl}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="group flex items-center gap-2 rounded-full bg-aqua-400 px-6 py-3 text-sm font-semibold text-on-accent shadow-lg shadow-aqua-500/40 ring-2 ring-aqua-400/30 ring-offset-2 ring-offset-canvas transition-transform hover:scale-[1.03] hover:bg-aqua-300"
+                        >
+                            <Download size={16} />
+                            Download for Windows
+                        </a>
+                        <a
                             href="#features"
-                            className="group flex items-center gap-2 rounded-full bg-aqua-400 px-6 py-3 text-sm font-semibold text-ink transition-transform hover:scale-[1.03] hover:bg-aqua-300"
+                            className="group flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"
                         >
                             Explore Features
                             <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
-                        </a>
-                        <a
-                            href="#showcase"
-                            className="rounded-full border border-line px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"
-                        >
-                            View Project
                         </a>
                         <a
                             href={site.githubUrl}
@@ -124,10 +127,10 @@ export default function Hero() {
                                 💧 Stay refreshed and keep your energy up.
                             </p>
                             <div className="mt-3 flex gap-2">
-                                <span className="rounded-lg bg-aqua-400 px-2.5 py-1 text-[11px] font-semibold text-ink">
+                                <span className="rounded-lg bg-aqua-400 px-2.5 py-1 text-[11px] font-semibold text-on-accent">
                                     I Drank
                                 </span>
-                                <span className="rounded-lg bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-text-secondary">
+                                <span className="rounded-lg bg-surface-2 px-2.5 py-1 text-[11px] font-semibold text-text-secondary">
                                     Snooze
                                 </span>
                             </div>

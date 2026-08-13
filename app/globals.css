@@ -1,39 +1,104 @@
 @import "tailwindcss";
 
+/* next-themes toggles a .dark class on <html>, not the OS color-scheme -
+   without this, Tailwind's dark: variant would key off prefers-color-scheme
+   instead and ignore the toggle entirely. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Type */
   --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-data: var(--font-jetbrains), ui-monospace, "Cascadia Code", monospace;
 
-  /* Color: deep ink canvas + aqua (water) primary + coral (from the
-     character's kurta) secondary, used sparingly. */
-  --color-ink: #070b14;
-  --color-ink-2: #0b1220;
-  --color-surface: #0f1728;
-  --color-surface-2: #141f36;
-  --color-line: #223252;
+  /* Color tokens alias the runtime custom properties below, so a value can
+     change between light and dark without regenerating any utility class -
+     see :root / .dark for the actual light (default) and dark values. */
+  --color-canvas: var(--c-canvas);
+  --color-canvas-alt: var(--c-canvas-alt);
+  --color-surface: var(--c-surface);
+  --color-surface-2: var(--c-surface-2);
+  --color-line: var(--c-line);
+  --color-on-accent: var(--c-on-accent);
 
-  --color-aqua-100: #d3f5fb;
-  --color-aqua-300: #7de3f0;
-  --color-aqua-400: #3fd0e6;
-  --color-aqua-500: #1fb8d6;
-  --color-aqua-600: #1390ab;
-  --color-aqua-900: #0a3a47;
+  --color-aqua-100: var(--c-aqua-100);
+  --color-aqua-200: var(--c-aqua-200);
+  --color-aqua-300: var(--c-aqua-300);
+  --color-aqua-400: var(--c-aqua-400);
+  --color-aqua-500: var(--c-aqua-500);
+  --color-aqua-600: var(--c-aqua-600);
+  --color-aqua-900: var(--c-aqua-900);
 
-  --color-coral-400: #ff8a72;
-  --color-coral-500: #ff6a4d;
-  --color-coral-600: #e6502f;
+  --color-coral-400: var(--c-coral-400);
+  --color-coral-500: var(--c-coral-500);
+  --color-coral-600: var(--c-coral-600);
 
-  --color-text-primary: #eaf2fa;
-  --color-text-secondary: #a9bdd6;
-  --color-text-muted: #6f84a3;
+  --color-text-primary: var(--c-text-primary);
+  --color-text-secondary: var(--c-text-secondary);
+  --color-text-muted: var(--c-text-muted);
 
   --container-page: 1240px;
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-drift: drift 14s ease-in-out infinite;
   --animate-hand-wave: hand-wave 900ms ease-in-out infinite;
+}
+
+/* Light is the default — no .dark class needed to render it. Values are a
+   soft, slightly cool off-white rather than stark #fff, so cards (pure
+   white) still read as lifted off the page. */
+:root {
+  color-scheme: light;
+
+  --c-canvas: #f5f8fa;
+  --c-canvas-alt: #eaf0f4;
+  --c-surface: #ffffff;
+  --c-surface-2: #f3f7fa;
+  --c-line: #dce6ed;
+  --c-on-accent: #06222b;
+
+  --c-aqua-100: #e3f7fb;
+  --c-aqua-200: #bdeef6;
+  --c-aqua-300: #3fa9c2;
+  --c-aqua-400: #0f9cb8;
+  --c-aqua-500: #0c86a0;
+  --c-aqua-600: #0a6f85;
+  --c-aqua-900: #0a3a47;
+
+  --c-coral-400: #e2593c;
+  --c-coral-500: #d1492e;
+  --c-coral-600: #b93a22;
+
+  --c-text-primary: #16232e;
+  --c-text-secondary: #48596a;
+  --c-text-muted: #7c8fa0;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --c-canvas: #070b14;
+  --c-canvas-alt: #0b1220;
+  --c-surface: #0f1728;
+  --c-surface-2: #141f36;
+  --c-line: #223252;
+  --c-on-accent: #06141a;
+
+  --c-aqua-100: #d3f5fb;
+  --c-aqua-200: #a9ecf5;
+  --c-aqua-300: #7de3f0;
+  --c-aqua-400: #3fd0e6;
+  --c-aqua-500: #1fb8d6;
+  --c-aqua-600: #1390ab;
+  --c-aqua-900: #0a3a47;
+
+  --c-coral-400: #ff8a72;
+  --c-coral-500: #ff6a4d;
+  --c-coral-600: #e6502f;
+
+  --c-text-primary: #eaf2fa;
+  --c-text-secondary: #a9bdd6;
+  --c-text-muted: #6f84a3;
 }
 
 @keyframes float {
@@ -72,10 +137,6 @@
   }
 }
 
-:root {
-  color-scheme: dark;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -85,15 +146,16 @@ html {
 }
 
 body {
-  background: var(--color-ink);
+  background: var(--color-canvas);
   color: var(--color-text-primary);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {
-  background: var(--color-aqua-500);
-  color: var(--color-ink);
+  background: var(--color-aqua-400);
+  color: var(--color-on-accent);
 }
 
 /* Reusable "ripple" hairline used under section eyebrows */
