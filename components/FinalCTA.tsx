@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 export default function FinalCTA() {
     return (
-        <section className="relative overflow-hidden border-t border-line/60 py-28">
+        <section className="relative overflow-hidden py-28">
             <div className="pointer-events-none absolute inset-0 -z-10">
                 <div className="absolute left-1/2 top-1/2 h-105 w-105 -translate-x-1/2 -translate-y-1/2 rounded-full bg-aqua-500/15 blur-[110px]" />
             </div>

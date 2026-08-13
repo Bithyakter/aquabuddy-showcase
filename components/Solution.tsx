@@ -51,8 +51,8 @@ export default function Solution() {
                 <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     {points.map((point, i) => (
                         <Reveal key={point.title} delay={(i % 3) * 0.08}>
-                            <div className="h-full rounded-2xl border border-line bg-surface/60 p-6 transition-colors hover:border-aqua-400/40">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-aqua-400/10 text-aqua-300">
+                            <div className="group h-full rounded-2xl border border-line bg-surface p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-aqua-400/40 hover:shadow-lg hover:shadow-aqua-500/10">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-aqua-400/25 to-aqua-600/10 text-aqua-400 transition-transform group-hover:scale-110">
                                     <point.icon size={19} />
                                 </div>
                                 <h3 className="mt-4 font-display text-base font-semibold text-text-primary">

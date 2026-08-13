@@ -12,7 +12,7 @@ export default function WhyAquaBuddy() {
 
                 <div className="mt-14 grid gap-6 lg:grid-cols-2">
                     <Reveal>
-                        <div className="h-full rounded-3xl border border-line bg-surface/60 p-8">
+                        <div className="h-full rounded-3xl border border-line bg-surface p-8 shadow-sm">
                             <div className="flex items-center gap-2.5 text-aqua-300">
                                 <User size={18} />
                                 <span className="text-sm font-semibold uppercase tracking-wide">
@@ -38,7 +38,7 @@ export default function WhyAquaBuddy() {
                     </Reveal>
 
                     <Reveal delay={0.1}>
-                        <div className="h-full rounded-3xl border border-line bg-surface/60 p-8">
+                        <div className="h-full rounded-3xl border border-line bg-surface p-8 shadow-sm">
                             <div className="flex items-center gap-2.5 text-coral-400">
                                 <Code2 size={18} />
                                 <span className="text-sm font-semibold uppercase tracking-wide">

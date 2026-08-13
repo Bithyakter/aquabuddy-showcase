@@ -51,7 +51,7 @@ export default function AppShowcase() {
     const scene = scenes[active];
 
     return (
-        <section id="showcase" className="border-t border-line/60 bg-canvas-alt py-24 sm:py-32">
+        <section id="showcase" className="bg-canvas-alt py-24 sm:py-32">
             <Container>
                 <SectionHeading
                     eyebrow="Application Showcase"
