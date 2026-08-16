@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/site";
 import ThemeProvider from "@/components/ThemeProvider";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -100,6 +101,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                     <ScrollProgress />
                     {children}
                 </ThemeProvider>
+                <Analytics />
             </body>
         </html>
     );
