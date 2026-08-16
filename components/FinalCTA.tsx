@@ -3,6 +3,7 @@ import { ArrowRight, Download } from "lucide-react";
 import Container from "./ui/Container";
 import Reveal from "./ui/Reveal";
 import { GitHubMark } from "./ui/icons";
+import MagneticButton from "./ui/MagneticButton";
 import { site } from "@/lib/site";
 
 export default function FinalCTA() {
@@ -31,15 +32,15 @@ export default function FinalCTA() {
                 </Reveal>
 
                 <Reveal delay={0.2} className="mt-9 flex flex-wrap items-center justify-center gap-4">
-                    <a
+                    <MagneticButton
                         href={site.downloadUrl}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="group flex items-center gap-2 rounded-full bg-aqua-400 px-6 py-3 text-sm font-semibold text-on-accent shadow-lg shadow-aqua-500/40 ring-2 ring-aqua-400/30 ring-offset-2 ring-offset-canvas transition-transform hover:scale-[1.03] hover:bg-aqua-300"
+                        className="group flex items-center gap-2 rounded-full bg-aqua-400 px-6 py-3 text-sm font-semibold text-on-accent shadow-lg shadow-aqua-500/40 ring-2 ring-aqua-400/30 ring-offset-2 ring-offset-canvas transition-colors hover:bg-aqua-300"
                     >
                         <Download size={16} />
                         Download for Windows
-                    </a>
+                    </MagneticButton>
                     <a
                         href="#top"
                         className="group flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"

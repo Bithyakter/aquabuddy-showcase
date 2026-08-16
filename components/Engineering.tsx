@@ -16,7 +16,7 @@ export default function Engineering() {
                 <div className="mt-12 flex flex-col divide-y divide-line/60 border-t border-line/60">
                     {engineeringChallenges.map((item, i) => (
                         <Reveal key={item.title} delay={Math.min(i * 0.05, 0.3)}>
-                            <div className="grid gap-3 py-8 sm:grid-cols-[220px_1fr] sm:gap-8">
+                            <div className="grid gap-3 rounded-xl px-4 py-8 -mx-4 transition-colors hover:bg-surface sm:grid-cols-[220px_1fr] sm:gap-8">
                                 <h3 className="font-display text-lg font-semibold text-text-primary">
                                     {item.title}
                                 </h3>

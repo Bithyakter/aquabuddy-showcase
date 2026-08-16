@@ -131,7 +131,7 @@ export default function AppShowcase() {
                                     transition={{ duration: 0.3 }}
                                 >
                                     {active === "reminder" ? (
-                                        <WavingCharacter heightPx={220} />
+                                        <WavingCharacter className="h-55 w-auto" />
                                     ) : (
                                         <Image
                                             src={scene.sprite as string}

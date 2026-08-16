@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Inter, JetBrains_Mono } from "next/font/google";
 import { site } from "@/lib/site";
 import ThemeProvider from "@/components/ThemeProvider";
+import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
 
 const sora = Sora({
@@ -95,7 +96,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 />
             </head>
             <body className="min-h-screen bg-canvas font-body text-text-primary antialiased">
-                <ThemeProvider>{children}</ThemeProvider>
+                <ThemeProvider>
+                    <ScrollProgress />
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     );

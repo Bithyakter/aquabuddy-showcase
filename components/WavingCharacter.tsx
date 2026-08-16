@@ -7,17 +7,15 @@ import Image from "next/image";
 const NATIVE = { width: 447, height: 558 };
 const HAND_CROP = { x: 85, y: 0, w: 88, h: 210 };
 
-export default function WavingCharacter({ heightPx = 220 }: { heightPx?: number }) {
-    const width = Math.round((heightPx * NATIVE.width) / NATIVE.height);
-
+export default function WavingCharacter({ className = "" }: { className?: string }) {
     return (
-        <div className="relative" style={{ width, height: heightPx }}>
+        <div className={`relative aspect-[447/558] ${className}`}>
             <Image
                 src="/images/character/waving-body.png"
                 alt="AquaBuddy waving hello"
                 fill
-                sizes={`${width}px`}
-                className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
+                sizes="400px"
+                className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
             />
             <div
                 className="absolute animate-hand-wave"
@@ -29,13 +27,7 @@ export default function WavingCharacter({ heightPx = 220 }: { heightPx?: number 
                     transformOrigin: "74% 93%"
                 }}
             >
-                <Image
-                    src="/images/character/waving-hand.png"
-                    alt=""
-                    fill
-                    sizes={`${Math.round((width * HAND_CROP.w) / NATIVE.width)}px`}
-                    className="object-contain"
-                />
+                <Image src="/images/character/waving-hand.png" alt="" fill sizes="100px" className="object-contain" />
             </div>
         </div>
     );
