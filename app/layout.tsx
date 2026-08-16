@@ -4,6 +4,8 @@ import { site } from "@/lib/site";
 import ThemeProvider from "@/components/ThemeProvider";
 import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const sora = Sora({
     variable: "--font-sora",
@@ -99,6 +101,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <ThemeProvider>
                     <ScrollProgress />
                     {children}
+
+                    <Analytics/>
+                    <SpeedInsights />
+
                 </ThemeProvider>
             </body>
         </html>
