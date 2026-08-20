@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Sora, Inter, JetBrains_Mono } from "next/font/google";
 import { site } from "@/lib/site";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -98,6 +99,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 />
             </head>
             <body className="min-h-screen bg-canvas font-body text-text-primary antialiased">
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=G-18Z3DXNQFC"
+                    strategy="afterInteractive"
+                />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-18Z3DXNQFC');
+                    `}
+                </Script>
+
                 <ThemeProvider>
                     <ScrollProgress />
                     {children}
