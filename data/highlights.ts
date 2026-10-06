@@ -1,12 +1,17 @@
 // Qualitative highlights only — no invented numbers/metrics for a project
 // with no analytics or install-count data behind it.
-export const highlights: string[] = [
-    "Packaged Windows desktop application",
-    "Interval + Do Not Disturb reminder scheduling",
-    "Opt-in stress-relief breaks — stretch, eyes, and breathing",
-    "Layered character animation with an isolated hand-wave overlay",
-    "Zero-trust renderer — no direct Node access from the UI",
-    "Local-only preferences — nothing leaves the machine"
+export interface Highlight {
+    mark: string;
+    text: string;
+}
+
+export const highlights: Highlight[] = [
+    { mark: "Ship", text: "Packaged Windows desktop application" },
+    { mark: "Time", text: "Interval + Do Not Disturb reminder scheduling" },
+    { mark: "Breaks", text: "Opt-in stress-relief breaks — stretch, eyes, and breathing" },
+    { mark: "Motion", text: "Layered character animation with an isolated hand-wave overlay" },
+    { mark: "Trust", text: "Zero-trust renderer — no direct Node access from the UI" },
+    { mark: "Local", text: "Local-only preferences — nothing leaves the machine" }
 ];
 
 export interface WhyPoint {
