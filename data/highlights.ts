@@ -3,6 +3,7 @@
 export const highlights: string[] = [
     "Packaged Windows desktop application",
     "Interval + Do Not Disturb reminder scheduling",
+    "Opt-in stress-relief breaks — stretch, eyes, and breathing",
     "Layered character animation with an isolated hand-wave overlay",
     "Zero-trust renderer — no direct Node access from the UI",
     "Local-only preferences — nothing leaves the machine"
@@ -22,7 +23,8 @@ export const whyForUsers: WhyPoint[] = [
     {
         title: "Fits how you work",
         description:
-            "Pause it for a meeting, drag it out of the way, set the exact interval you want. It adapts to your schedule, not the other way around."
+         "Pause it for a meeting, drag it out of the way, set the exact interval you want. It adapts to your schedule, not the other way around."
+            // "Pause it for a meeting, drag it out of the way, and choose how often it checks in — for water, or for a stretch, an eye break, or a few breaths."
     },
     {
         title: "Nothing to set up",

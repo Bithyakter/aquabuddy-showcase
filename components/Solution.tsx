@@ -18,12 +18,14 @@ const points = [
     {
         icon: MousePointerClick,
         title: "Two-click interaction",
-        detail: "\"I Drank\" or \"Snooze\" — the entire decision, no forms, no app to switch into."
+        //  detail: "\"I Drank\" or \"Snooze\" — the entire decision, no forms, no app to switch into."
+        detail: "\"I Drank\" or \"Snooze\" for water. \"Take a Break\" or \"Later\" for a stretch, an eye rest, or a few breaths. No forms, no app to switch into."
     },
     {
         icon: SlidersHorizontal,
         title: "Customizable schedules",
-        detail: "Preset intervals from 15 to 90 minutes, an exact custom value, and Do Not Disturb windows that expire on their own."
+        //  detail: "Preset intervals from 15 to 90 minutes, an exact custom value, and Do Not Disturb windows that expire on their own."
+        detail: "Water check-ins from 15 to 90 minutes, or an exact custom value. Stress-relief breaks after 30, 45, 60, or 90 minutes at your desk, inside the work hours you pick. Do Not Disturb expires on its own."
     },
     {
         icon: EyeOff,

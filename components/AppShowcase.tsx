@@ -8,7 +8,7 @@ import SectionHeading from "./ui/SectionHeading";
 import Reveal from "./ui/Reveal";
 import WavingCharacter from "./WavingCharacter";
 
-type SceneKey = "idle" | "reminder" | "celebration" | "sad";
+type SceneKey = "idle" | "reminder" | "celebration" | "sad" | "stretch" | "eyeBreak" | "breathe";
 
 const scenes: Record<
     SceneKey,
@@ -16,7 +16,7 @@ const scenes: Record<
         label: string;
         sprite?: string;
         alt: string;
-        bubble: { text: string; buttons: boolean } | null;
+        bubble: { text: string; actions?: [string, string] } | null;
     }
 > = {
     idle: {
@@ -28,23 +28,53 @@ const scenes: Record<
     reminder: {
         label: "Reminder",
         alt: "AquaBuddy waving with a reminder message",
-        bubble: { text: "🥤 Afternoon check! Have you had enough water today?", buttons: true }
+        bubble: {
+            text: "🥤 Afternoon check! Have you had enough water today?",
+            actions: ["💧 I Drank", "😴 Snooze"]
+        }
     },
     celebration: {
         label: "Celebration",
         sprite: "/images/character/drinking.png",
         alt: "AquaBuddy celebrating after a reminder is answered",
-        bubble: { text: "Yayyy!! 💖 Good job staying hydrated!", buttons: false }
+        bubble: { text: "Yayyy!! 💖 Good job staying hydrated!" }
     },
     sad: {
         label: "Snoozed",
         sprite: "/images/character/sad.png",
         alt: "AquaBuddy waiting patiently after a snooze",
-        bubble: { text: "Okkayy 🥺 I'll remind you again soon.", buttons: false }
+        bubble: { text: "Okkayy 🥺 I'll remind you again soon." }
+    },
+    stretch: {
+        label: "Stretching",
+        sprite: "/images/character/stretching.png",
+        alt: "AquaBuddy stretching with hands on the lower back",
+        bubble: {
+            text: "Stretch time! 🧘\nReach up, roll those shoulders.",
+            actions: ["🧘 Take a Break", "⏰ Later"]
+        }
+    },
+    eyeBreak: {
+        label: "Eye Break",
+        sprite: "/images/character/eye-break.png",
+        alt: "AquaBuddy resting both hands over closed eyes",
+        bubble: {
+            text: "Eye break! 👀\nLook far away for 20 seconds.",
+            actions: ["🧘 Take a Break", "⏰ Later"]
+        }
+    },
+    breathe: {
+        label: "Breathing",
+        sprite: "/images/character/breathing.png",
+        alt: "AquaBuddy standing calmly with both hands on the chest",
+        bubble: {
+            text: "Quick breather 🌬️\nTake 3 slow, deep breaths.",
+            actions: ["🧘 Take a Break", "⏰ Later"]
+        }
     }
 };
 
-const sceneOrder: SceneKey[] = ["idle", "reminder", "celebration", "sad"];
+const sceneOrder: SceneKey[] = ["idle", "reminder", "celebration", "sad", "stretch", "eyeBreak", "breathe"];
 
 export default function AppShowcase() {
     const [active, setActive] = useState<SceneKey>("reminder");
@@ -56,16 +86,16 @@ export default function AppShowcase() {
                 <SectionHeading
                     eyebrow="Application Showcase"
                     title="The actual interface, rebuilt here in the browser"
-                    description="This isn't a screenshot — it's the real character art and the real interaction copy, laid out with the same colors AquaBuddy's speech bubble and buttons actually use. The Reminder pose even uses the app's real split hand-and-body layers, so it genuinely waves instead of just sitting there."
+                    description="This isn't a screenshot — it's the real character art and the real interaction copy, laid out with the same colors AquaBuddy's speech bubble and buttons actually use. Water reminders wave with the app's split hand-and-body layers. Stretching, eye break, and breathing use the same bubble and the poses from the app."
                     align="center"
                 />
 
-                <Reveal className="mx-auto mt-14 flex max-w-lg justify-center gap-2 rounded-full border border-line bg-surface/70 p-1.5">
+                <Reveal className="mx-auto mt-14 flex max-w-3xl flex-wrap justify-center gap-2 rounded-3xl border border-line bg-surface/70 p-1.5">
                     {sceneOrder.map((key) => (
                         <button
                             key={key}
                             onClick={() => setActive(key)}
-                            className={`flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                                 active === key
                                     ? "bg-aqua-400 text-on-accent"
                                     : "text-text-secondary hover:text-text-primary"
@@ -85,7 +115,7 @@ export default function AppShowcase() {
                             <span className="ml-3 font-data text-[11px] text-text-muted">desktop — always on top</span>
                         </div>
 
-                        <div className="relative flex h-[380px] items-end justify-center overflow-hidden bg-gradient-to-b from-[#0f1c30] to-[#0a1220] px-6 pb-10">
+                        <div className="relative flex h-[460px] items-end justify-center overflow-hidden bg-gradient-to-b from-[#0f1c30] to-[#0a1220] px-6 pb-10">
                             <div
                                 className="pointer-events-none absolute inset-0 opacity-[0.06]"
                                 style={{
@@ -106,16 +136,16 @@ export default function AppShowcase() {
                                             transition={{ duration: 0.25 }}
                                             className="absolute -top-6 left-1/2 z-10 w-56 -translate-x-1/2 -translate-y-full rounded-[22px] border-2 border-[#FFD7E7] bg-[#FFF8FC] p-4 text-center shadow-xl"
                                         >
-                                            <p className="text-[13px] font-semibold leading-snug text-[#5C4A4A]">
+                                            <p className="whitespace-pre-line text-[13px] font-semibold leading-snug text-[#5C4A4A]">
                                                 {scene.bubble.text}
                                             </p>
-                                            {scene.bubble.buttons ? (
+                                            {scene.bubble.actions ? (
                                                 <div className="mt-3 flex justify-center gap-2">
                                                     <span className="rounded-[10px] bg-[#57d86b] px-3 py-1.5 text-[11px] font-bold text-white">
-                                                        💧 I Drank
+                                                        {scene.bubble.actions[0]}
                                                     </span>
                                                     <span className="rounded-[10px] bg-[#ececec] px-3 py-1.5 text-[11px] font-bold text-[#333]">
-                                                        😴 Snooze
+                                                        {scene.bubble.actions[1]}
                                                     </span>
                                                 </div>
                                             ) : null}

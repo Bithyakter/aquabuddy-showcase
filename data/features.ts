@@ -1,23 +1,17 @@
 export interface Feature {
-    icon: "clock" | "moon" | "smile" | "handWave" | "messageSquare" | "mousePointerClick" | "move" | "save";
+    icon: "clock" | "activity" | "moon" | "smile" | "handWave" | "messageSquare" | "mousePointerClick" | "move" | "save";
     title: string;
     description: string;
 }
 
 // Every entry here maps to something actually implemented in the app —
-// see AquaBuddy/src/renderer/reminderEngine.ts, character.ts, main.ts.
+// see AquaBuddy/src/renderer/reminderEngine.ts, breakFlow.ts, character.ts, main.ts.
 export const features: Feature[] = [
     {
         icon: "clock",
         title: "Reminders on your schedule",
         description:
             "Pick a 15, 30, 45, 60, or 90-minute check-in, or set an exact custom interval. AquaBuddy reschedules itself the moment you change it — no restart needed."
-    },
-    {
-        icon: "moon",
-        title: "Do Not Disturb",
-        description:
-            "Pause reminders for 30 minutes, 1 hour, 2 hours, or until tomorrow morning. DND expires on its own and reminders quietly resume — nothing to remember to turn back on."
     },
     {
         icon: "handWave",
@@ -30,6 +24,18 @@ export const features: Feature[] = [
         title: "\"Still there?\" nudge",
         description:
             "Ignore a reminder and AquaBuddy waves again, then looks a little sad, before walking off on its own — a gentle escalation, not a repeating alarm."
+    },
+    {
+        icon: "activity",
+        title: "Stress-relief breaks",
+        description:
+            "The same walk-in can be a stretch, an eye break, or three slow breaths. Turn it on from the tray and it checks in after 30, 45, 60, or 90 minutes at your desk — Take a Break, or Later."
+    },
+    {
+        icon: "moon",
+        title: "Do Not Disturb",
+        description:
+            "Pause reminders for 30 minutes, 1 hour, 2 hours, or until tomorrow morning. DND expires on its own and reminders quietly resume — nothing to remember to turn back on."
     },
     {
         icon: "messageSquare",
@@ -53,6 +59,6 @@ export const features: Feature[] = [
         icon: "save",
         title: "Remembers everything",
         description:
-            "DND state, reminder interval, and window position are saved to disk automatically and restored the instant the app reopens."
+            "DND state, reminder intervals, break settings, and window position are saved to disk automatically and restored the instant the app reopens."
     }
 ];

@@ -15,13 +15,15 @@ export const workflow: WorkflowStep[] = [
         step: "02",
         title: "Walks in",
         description:
-            "When the interval is up (and Do Not Disturb isn't active), it walks on screen and shows a message chosen for the current time of day."
+         "When the interval is up (and Do Not Disturb isn't active), it walks on screen and shows a message chosen for the current time of day."
+            // "When the interval is up (and Do Not Disturb isn't active), it walks on with a time-of-day water reminder — or a stretch, an eye break, or a breathing pause when stress relief is on."
     },
     {
         step: "03",
         title: "You respond — or don't",
-        description:
-            "Click \"I Drank\" and it celebrates. Click \"Snooze\" and it waits patiently. Ignore it, and it gently checks in before walking off on its own."
+        description:  
+         "Click \"I Drank\" and it celebrates. Click \"Snooze\" and it waits patiently. Ignore it, and it gently checks in before walking off on its own."
+            // "\"I Drank\" and it celebrates. \"Snooze\" and it waits. On a stress-relief break, \"Take a Break\" or \"Later.\" Ignore either one, and it gently checks in before walking off."
     },
     {
         step: "04",

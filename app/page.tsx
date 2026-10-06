@@ -24,6 +24,7 @@ export default function Home() {
                 <Solution />
                 <Features />
                 <HowItWorks />
+                {/* <StressRelief /> */}
                 <AppShowcase />
                 <WhyAquaBuddy />
                 <TechStack />

@@ -1,4 +1,5 @@
 import {
+    Activity,
     Clock,
     Moon,
     Smile,
@@ -15,6 +16,7 @@ import Reveal from "./ui/Reveal";
 import { features, type Feature } from "@/data/features";
 
 const iconMap: Record<Feature["icon"], LucideIcon> = {
+    activity: Activity,
     clock: Clock,
     moon: Moon,
     smile: Smile,
