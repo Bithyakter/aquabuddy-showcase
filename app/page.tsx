@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ScrollSection from "../components/ui/ScrollSection";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
@@ -20,21 +21,46 @@ export default function Home() {
             <Navbar />
             <main>
                 <Hero />
-                <Problem />
-                <Solution />
-                <Features />
-                <HowItWorks />
-                {/* <StressRelief /> */}
-                <AppShowcase />
-                <WhyAquaBuddy />
-                <TechStack />
-                <Engineering />
-                <FutureImprovements />
-                <Highlights />
-                <DeveloperNote />
-                <FinalCTA />
+                <ScrollSection>
+                    <Problem />
+                </ScrollSection>
+                <ScrollSection>
+                    <Solution />
+                </ScrollSection>
+                <ScrollSection>
+                    <Features />
+                </ScrollSection>
+                <ScrollSection>
+                    <HowItWorks />
+                </ScrollSection>
+                <ScrollSection>
+                    <AppShowcase />
+                </ScrollSection>
+                <ScrollSection>
+                    <WhyAquaBuddy />
+                </ScrollSection>
+                <ScrollSection>
+                    <TechStack />
+                </ScrollSection>
+                <ScrollSection>
+                    <Engineering />
+                </ScrollSection>
+                <ScrollSection>
+                    <FutureImprovements />
+                </ScrollSection>
+                <ScrollSection>
+                    <Highlights />
+                </ScrollSection>
+                <ScrollSection>
+                    <DeveloperNote />
+                </ScrollSection>
+                <ScrollSection>
+                    <FinalCTA />
+                </ScrollSection>
             </main>
-            <Footer />
+            <ScrollSection>
+                <Footer />
+            </ScrollSection>
         </>
     );
 }
