@@ -107,8 +107,8 @@ export default function AppShowcase() {
                             type="button"
                             onClick={() => setSkin(opt.id)}
                             className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all ${skin === opt.id
-                                    ? "bg-aqua-400 text-on-accent shadow-sm"
-                                    : "text-text-secondary hover:text-text-primary"
+                                ? "bg-aqua-400 text-on-accent shadow-sm"
+                                : "text-text-secondary hover:text-text-primary"
                                 }`}
                         >
                             <span>{opt.icon}</span>
@@ -125,8 +125,8 @@ export default function AppShowcase() {
                             type="button"
                             onClick={() => setActive(key)}
                             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${active === key
-                                    ? "bg-aqua-400 text-on-accent"
-                                    : "text-text-secondary hover:text-text-primary"
+                                ? "bg-aqua-400 text-on-accent"
+                                : "text-text-secondary hover:text-text-primary"
                                 }`}
                         >
                             {scenes[key].label}

@@ -108,9 +108,9 @@ export default function Features() {
                                     delay: index * 0.08
                                 }}
                                 whileHover={reduced ? undefined : { y: -8, rotate: 0 }}
-                                className="relative flex h-full flex-col rounded-[22px] border-2 border-[#FFD7E7] bg-[#FFF8FC] px-5 pt-5 pb-7 shadow-[0_16px_40px_rgba(255,182,193,0.28)]"
+                                className="relative flex h-full flex-col rounded-[22px] border-2 border-[#FFD7E7] bg-[#FFF8FC] px-5 pt-5 pb-7 shadow-[0_16px_40px_rgba(255,182,193,0.28)] transition-colors dark:border-line dark:bg-surface dark:shadow-none"
                             >
-                                <div className="flex items-center gap-2 text-[#e2593c]">
+                                <div className="flex items-center gap-2 text-[#e2593c] dark:text-coral-400">
                                     <Icon
                                         size={16}
                                         className={item.icon === "handWave" && !reduced ? "animate-hand-wave" : undefined}
@@ -119,19 +119,19 @@ export default function Features() {
                                         {item.kicker}
                                     </span>
                                 </div>
-                                <h3 className="mt-3 font-display text-xl font-semibold text-[#5C4A4A]">
+                                <h3 className="mt-3 font-display text-xl font-semibold text-[#5C4A4A] dark:text-text-primary">
                                     {feature.title}
                                 </h3>
-                                <p className="mt-2 text-sm leading-relaxed text-[#5C4A4A]/80">
+                                <p className="mt-2 text-sm leading-relaxed text-[#5C4A4A]/80 dark:text-text-secondary">
                                     {feature.description}
                                 </p>
                                 <span
                                     aria-hidden
-                                    className="absolute -bottom-3 left-10 h-0 w-0 border-x-[11px] border-t-[12px] border-x-transparent border-t-[#FFF8FC]"
+                                    className="absolute -bottom-3 left-10 h-0 w-0 border-x-[11px] border-t-[12px] border-x-transparent border-t-[#FFF8FC] dark:border-t-surface"
                                 />
                                 <span
                                     aria-hidden
-                                    className="absolute -bottom-[15px] left-[38px] -z-10 h-0 w-0 border-x-[12px] border-t-[14px] border-x-transparent border-t-[#FFD7E7]"
+                                    className="absolute -bottom-[15px] left-[38px] -z-10 h-0 w-0 border-x-[12px] border-t-[14px] border-x-transparent border-t-[#FFD7E7] dark:border-t-line"
                                 />
                             </motion.article>
                         );
