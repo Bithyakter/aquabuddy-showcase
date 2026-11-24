@@ -8,7 +8,7 @@ export const site = {
     downloadUrl: "https://github.com/Bithyakter/aqua-buddy/releases/tag/v1.1.1",
     author: {
         name: "Bithy Akter",
-        portfolioUrl: "https://bithy.vercel.app"
+        portfolioUrl: "#"
     },
     keywords: [
         "desktop hydration app",

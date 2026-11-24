@@ -9,5 +9,5 @@ export const navItems: NavItem[] = [
     // { label: "Breaks", href: "#breaks" },
     { label: "Showcase", href: "#showcase" },
     { label: "Tech Stack", href: "#tech-stack" },
-    { label: "Engineering", href: "#engineering" }
+    // { label: "Engineering", href: "#engineering" }
 ];
