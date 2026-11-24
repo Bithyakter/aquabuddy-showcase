@@ -6,10 +6,10 @@ export interface Highlight {
 }
 
 export const highlights: Highlight[] = [
-    { mark: "Ship", text: "Packaged Windows desktop application" },
+    { mark: "Ship", text: "Cross-platform desktop application (Windows, macOS, Linux)" },
     { mark: "Time", text: "Interval + Do Not Disturb reminder scheduling" },
     { mark: "Breaks", text: "Opt-in stress-relief breaks — stretch, eyes, and breathing" },
-    { mark: "Motion", text: "Layered character animation with an isolated hand-wave overlay" },
+    { mark: "Skins", text: "Two character themes with layered hand-wave & wellness poses" },
     { mark: "Trust", text: "Zero-trust renderer — no direct Node access from the UI" },
     { mark: "Local", text: "Local-only preferences — nothing leaves the machine" }
 ];

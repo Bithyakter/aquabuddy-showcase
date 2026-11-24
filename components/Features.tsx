@@ -6,10 +6,12 @@ import {
     Activity,
     Clock,
     Hand,
+    Laptop,
     MessageSquare,
     Moon,
     MousePointerClick,
     Move,
+    Palette,
     Save,
     Smile,
     type LucideIcon
@@ -27,7 +29,9 @@ const iconMap: Record<Feature["icon"], LucideIcon> = {
     messageSquare: MessageSquare,
     mousePointerClick: MousePointerClick,
     move: Move,
-    save: Save
+    save: Save,
+    palette: Palette,
+    laptop: Laptop
 };
 
 const INTERVALS = ["15", "30", "45", "60", "90"];
@@ -204,27 +208,34 @@ export default function Features() {
                             </div>
 
                             <div className="rounded-2xl border border-line bg-canvas/80 p-5 backdrop-blur-sm">
-                                <div className="flex flex-wrap gap-2">
-                                    {BREAKS.map((label, index) => {
-                                        const active = index === breakIndex;
-                                        return (
-                                            <span
-                                                key={label}
-                                                className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
-                                                    active
+                                <div className="flex flex-wrap items-center justify-between gap-2">
+                                    <div className="flex flex-wrap gap-2">
+                                        {BREAKS.map((label, index) => {
+                                            const active = index === breakIndex;
+                                            return (
+                                                <span
+                                                    key={label}
+                                                    className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${active
                                                         ? "bg-aqua-400 text-on-accent"
                                                         : "bg-surface-2 text-text-muted"
-                                                }`}
-                                            >
-                                                {label}
-                                            </span>
-                                        );
-                                    })}
+                                                        }`}
+                                                >
+                                                    {label}
+                                                </span>
+                                            );
+                                        })}
+                                    </div>
+                                    <span className="inline-flex items-center rounded-full border border-aqua-400/30 bg-aqua-400/10 px-2.5 py-0.5 font-data text-[10px] font-medium text-aqua-300">
+                                        Continuous Work Detection
+                                    </span>
                                 </div>
                                 <h3 className="mt-3 font-display text-lg font-semibold text-text-primary">
                                     {relief.title}
                                 </h3>
                                 <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">{relief.description}</p>
+                                <p className="mt-3 rounded-xl border border-line/60 bg-surface/60 p-2.5 text-xs text-text-muted">
+                                    <strong className="text-text-primary">How it works:</strong> Monitors active keyboard and mouse interaction. If you step away from your desk, take lunch, or put your laptop to sleep, the break timer resets automatically so you are only prompted after continuous, uninterrupted desk work.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -259,6 +270,47 @@ export default function Features() {
                             </motion.article>
                         );
                     })}
+                </div>
+
+                {/* What's new in Version 2: Character 2 & Multi-Platform */}
+                <div className="mt-5 grid gap-5 md:grid-cols-2">
+                    <motion.article
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-60px" }}
+                        transition={{ duration: 0.45 }}
+                        className="group relative overflow-hidden rounded-[24px] border border-line bg-surface/80 p-6"
+                    >
+                        <div className="flex items-center gap-2 text-aqua-400">
+                            <Palette size={20} />
+                            <span className="font-data text-[11px] font-medium tracking-wide uppercase">New In Version 2</span>
+                        </div>
+                        <h3 className="mt-3 font-display text-xl font-semibold text-text-primary">
+                            Visual Themes & Character 2
+                        </h3>
+                        <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">
+                            Switch seamlessly between the classic companion and Character 2 (the male companion skin) right from the tray preferences. Both characters feature full walking, waving, drinking celebrations, and stress-relief poses.
+                        </p>
+                    </motion.article>
+
+                    <motion.article
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-60px" }}
+                        transition={{ duration: 0.45, delay: 0.08 }}
+                        className="group relative overflow-hidden rounded-[24px] border border-line bg-surface/80 p-6"
+                    >
+                        <div className="flex items-center gap-2 text-coral-400">
+                            <Laptop size={20} />
+                            <span className="font-data text-[11px] font-medium tracking-wide uppercase">Multi-Platform</span>
+                        </div>
+                        <h3 className="mt-3 font-display text-xl font-semibold text-text-primary">
+                            Windows, macOS & Linux Support
+                        </h3>
+                        <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">
+                            AquaBuddy is no longer Windows-only. It runs natively across Windows, macOS, and Linux, with transparent click-through windowing engineered specifically for each desktop environment.
+                        </p>
+                    </motion.article>
                 </div>
             </Container>
         </section>

@@ -6,22 +6,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import Container from "./ui/Container";
 import SectionHeading from "./ui/SectionHeading";
 import Reveal from "./ui/Reveal";
-import WavingCharacter from "./WavingCharacter";
+import WavingCharacter, { type CharacterSkin } from "./WavingCharacter";
 
 type SceneKey = "idle" | "reminder" | "celebration" | "sad" | "stretch" | "eyeBreak" | "breathe";
 
-const scenes: Record<
-    SceneKey,
-    {
-        label: string;
-        sprite?: string;
-        alt: string;
-        bubble: { text: string; actions?: [string, string] } | null;
-    }
-> = {
+interface SceneConfig {
+    label: string;
+    file?: string;
+    alt: string;
+    bubble: { text: string; actions?: [string, string] } | null;
+}
+
+const scenes: Record<SceneKey, SceneConfig> = {
     idle: {
         label: "Idle",
-        sprite: "/images/character/standing.png",
+        file: "standing.png",
         alt: "AquaBuddy standing quietly off to the side",
         bubble: null
     },
@@ -35,19 +34,19 @@ const scenes: Record<
     },
     celebration: {
         label: "Celebration",
-        sprite: "/images/character/drinking.png",
+        file: "drinking.png",
         alt: "AquaBuddy celebrating after a reminder is answered",
         bubble: { text: "Yayyy!! 💖 Good job staying hydrated!" }
     },
     sad: {
         label: "Snoozed",
-        sprite: "/images/character/sad.png",
+        file: "sad.png",
         alt: "AquaBuddy waiting patiently after a snooze",
         bubble: { text: "Okkayy 🥺 I'll remind you again soon." }
     },
     stretch: {
         label: "Stretching",
-        sprite: "/images/character/stretching.png",
+        file: "stretching.png",
         alt: "AquaBuddy stretching with hands on the lower back",
         bubble: {
             text: "Stretch time! 🧘\nReach up, roll those shoulders.",
@@ -56,7 +55,7 @@ const scenes: Record<
     },
     eyeBreak: {
         label: "Eye Break",
-        sprite: "/images/character/eye-break.png",
+        file: "eye-break.png",
         alt: "AquaBuddy resting both hands over closed eyes",
         bubble: {
             text: "Eye break! 👀\nLook far away for 20 seconds.",
@@ -65,7 +64,7 @@ const scenes: Record<
     },
     breathe: {
         label: "Breathing",
-        sprite: "/images/character/breathing.png",
+        file: "breathing.png",
         alt: "AquaBuddy standing calmly with both hands on the chest",
         bubble: {
             text: "Quick breather 🌬️\nTake 3 slow, deep breaths.",
@@ -76,9 +75,19 @@ const scenes: Record<
 
 const sceneOrder: SceneKey[] = ["idle", "reminder", "celebration", "sad", "stretch", "eyeBreak", "breathe"];
 
+const skinOptions: { id: CharacterSkin; label: string; icon: string }[] = [
+    { id: "default", label: "Classic Skin", icon: "💧" },
+    { id: "character-2", label: "Character 2 (Male)", icon: "👦" }
+];
+
 export default function AppShowcase() {
     const [active, setActive] = useState<SceneKey>("reminder");
+    const [skin, setSkin] = useState<CharacterSkin>("default");
     const scene = scenes[active];
+
+    const spritePath = scene.file
+        ? `/images/${skin === "character-2" ? "character-2" : "character"}/${scene.file}`
+        : null;
 
     return (
         <section id="showcase" className="bg-canvas-alt py-24 sm:py-32">
@@ -86,20 +95,39 @@ export default function AppShowcase() {
                 <SectionHeading
                     eyebrow="Application Showcase"
                     title="The actual interface, rebuilt here in the browser"
-                    description="This isn't a screenshot — it's the real character art and the real interaction copy, laid out with the same colors AquaBuddy's speech bubble and buttons actually use. Water reminders wave with the app's split hand-and-body layers. Stretching, eye break, and breathing use the same bubble and the poses from the app."
+                    description="This isn't a screenshot — it's the real character art and the real interaction copy, laid out with the same colors AquaBuddy's speech bubble and buttons actually use. Toggle between the classic buddy and Character 2 (the male companion skin), and preview water reminders and stress-relief poses."
                     align="center"
                 />
 
-                <Reveal className="mx-auto mt-14 flex max-w-3xl flex-wrap justify-center gap-2 rounded-3xl border border-line bg-surface/70 p-1.5">
+                {/* Character skin switcher */}
+                <Reveal className="mx-auto mt-12 flex max-w-sm justify-center gap-2 rounded-full border border-line bg-surface/90 p-1.5 shadow-sm">
+                    {skinOptions.map((opt) => (
+                        <button
+                            key={opt.id}
+                            type="button"
+                            onClick={() => setSkin(opt.id)}
+                            className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all ${skin === opt.id
+                                    ? "bg-aqua-400 text-on-accent shadow-sm"
+                                    : "text-text-secondary hover:text-text-primary"
+                                }`}
+                        >
+                            <span>{opt.icon}</span>
+                            <span>{opt.label}</span>
+                        </button>
+                    ))}
+                </Reveal>
+
+                {/* Scene buttons */}
+                <Reveal delay={0.05} className="mx-auto mt-4 flex max-w-3xl flex-wrap justify-center gap-2 rounded-3xl border border-line bg-surface/70 p-1.5">
                     {sceneOrder.map((key) => (
                         <button
                             key={key}
+                            type="button"
                             onClick={() => setActive(key)}
-                            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                                active === key
+                            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${active === key
                                     ? "bg-aqua-400 text-on-accent"
                                     : "text-text-secondary hover:text-text-primary"
-                            }`}
+                                }`}
                         >
                             {scenes[key].label}
                         </button>
@@ -112,7 +140,9 @@ export default function AppShowcase() {
                             <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
                             <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
                             <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-                            <span className="ml-3 font-data text-[11px] text-text-muted">desktop — always on top</span>
+                            <span className="ml-3 font-data text-[11px] text-text-muted">
+                                desktop — always on top • {skin === "character-2" ? "Character 2" : "Classic"}
+                            </span>
                         </div>
 
                         <div className="relative flex h-[460px] items-end justify-center overflow-hidden bg-gradient-to-b from-[#0f1c30] to-[#0a1220] px-6 pb-10">
@@ -155,27 +185,37 @@ export default function AppShowcase() {
                                 </AnimatePresence>
 
                                 <motion.div
-                                    key={active}
+                                    key={active + "-" + skin}
                                     initial={{ opacity: 0, x: 16 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.3 }}
                                 >
                                     {active === "reminder" ? (
-                                        <WavingCharacter className="h-55 w-auto" />
-                                    ) : (
+                                        <WavingCharacter skin={skin} className="h-55 w-auto" />
+                                    ) : spritePath ? (
                                         <Image
-                                            src={scene.sprite as string}
+                                            src={spritePath}
                                             alt={scene.alt}
                                             width={220}
                                             height={280}
                                             className="h-55 w-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
                                         />
-                                    )}
+                                    ) : null}
                                 </motion.div>
                             </div>
                         </div>
                     </div>
                 </Reveal>
+
+                {["stretch", "eyeBreak", "breathe"].includes(active) && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mx-auto mt-5 max-w-xl rounded-2xl border border-line bg-surface/80 p-3 text-center text-xs text-text-secondary"
+                    >
+                        <span className="font-semibold text-aqua-400">⚡ Smart Work Detection:</span> Stress-relief breaks rely on continuous keyboard and mouse movement. If you step away from your desk, go to lunch, or put your laptop to sleep, the timer resets automatically so you are only prompted after uninterrupted desk work.
+                    </motion.div>
+                )}
             </Container>
         </section>
     );

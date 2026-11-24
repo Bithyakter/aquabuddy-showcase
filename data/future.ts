@@ -1,8 +1,7 @@
-// Straight from AquaBuddy/readme.md's own "What's Next" section — labeled
-// as ideas, not commitments, and not built yet.
+// Straight from AquaBuddy's roadmap — labeled as future ideas, not commitments.
 export const futureIdeas: string[] = [
     "Sound effects for reminders and reactions",
-    "Visual themes / alternate character skins",
-    "macOS and Linux support",
-    "Daily hydration stats and streaks"
+    "Daily hydration stats and streaks",
+    "Customizable drink goal tracking",
+    "Smart idle-break auto-detection customization"
 ];

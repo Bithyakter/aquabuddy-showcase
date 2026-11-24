@@ -39,7 +39,7 @@ export default function FinalCTA() {
                         className="group flex items-center gap-2 rounded-full bg-aqua-400 px-6 py-3 text-sm font-semibold text-on-accent shadow-lg shadow-aqua-500/40 ring-2 ring-aqua-400/30 ring-offset-2 ring-offset-canvas transition-colors hover:bg-aqua-300"
                     >
                         <Download size={16} />
-                        Download for Windows
+                        Download AquaBuddy
                     </MagneticButton>
                     <a
                         href="#top"
@@ -57,15 +57,12 @@ export default function FinalCTA() {
                         <GitHubMark size={16} />
                         GitHub
                     </a>
-                    {/* <a
-                        href={site.author.portfolioUrl}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="flex items-center gap-2 px-2 py-3 text-sm font-semibold text-text-secondary transition-colors hover:text-text-primary"
-                    >
-                        Back to Portfolio
-                        <ArrowUpRight size={15} />
-                    </a> */}
+                </Reveal>
+
+                <Reveal delay={0.24}>
+                    <p className="mt-4 text-xs font-medium text-text-muted">
+                        Packaged for Windows (.exe), macOS (.dmg), and Linux (.AppImage, .deb, .tar.gz)
+                    </p>
                 </Reveal>
             </Container>
         </section>

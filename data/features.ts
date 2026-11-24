@@ -1,11 +1,11 @@
 export interface Feature {
-    icon: "clock" | "activity" | "moon" | "smile" | "handWave" | "messageSquare" | "mousePointerClick" | "move" | "save";
+    icon: "clock" | "activity" | "moon" | "smile" | "handWave" | "messageSquare" | "mousePointerClick" | "move" | "save" | "palette" | "laptop";
     title: string;
     description: string;
 }
 
 // Every entry here maps to something actually implemented in the app —
-// see AquaBuddy/src/renderer/reminderEngine.ts, breakFlow.ts, character.ts, main.ts.
+// see AquaBuddy/src/renderer/reminderEngine.ts, breakReminderEngine.ts, character.ts, main.ts.
 export const features: Feature[] = [
     {
         icon: "clock",
@@ -29,7 +29,19 @@ export const features: Feature[] = [
         icon: "activity",
         title: "Stress-relief breaks",
         description:
-            "The same walk-in can be a stretch, an eye break, or three slow breaths. Turn it on from the tray and it checks in after 30, 45, 60, or 90 minutes at your desk — Take a Break, or Later."
+            "Walk-in breaks for stretching, eye rest, or deep breathing. Powered by continuous keyboard and mouse activity detection — triggering only when you've been working non-stop and resetting if you step away from your desk."
+    },
+    {
+        icon: "palette",
+        title: "Visual themes & character skins",
+        description:
+            "Toggle between the classic companion and Character 2 (the male companion skin) directly from tray preferences — with matching walk, wave, and wellness break sprites."
+    },
+    {
+        icon: "laptop",
+        title: "Cross-platform support",
+        description:
+            "Built natively for Windows (.exe), macOS (.dmg), and Linux (.AppImage, .deb, .tar.gz) with transparent click-through windowing tailored to each OS."
     },
     {
         icon: "moon",
@@ -59,6 +71,6 @@ export const features: Feature[] = [
         icon: "save",
         title: "Remembers everything",
         description:
-            "DND state, reminder intervals, break settings, and window position are saved to disk automatically and restored the instant the app reopens."
+            "DND state, reminder intervals, break settings, character theme, and window position are saved to disk automatically and restored the instant the app reopens."
     }
 ];

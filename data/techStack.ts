@@ -19,7 +19,8 @@ export const techStack: TechGroup[] = [
     {
         label: "Desktop Runtime",
         icon: "monitor",
-        items: ["Electron 43"]
+        items: ["Electron 43"],
+        note: "Cross-platform runtime powering native desktop experiences on Windows, macOS, and Linux."
     },
     {
         label: "Renderer UI",
@@ -30,8 +31,8 @@ export const techStack: TechGroup[] = [
     {
         label: "Packaging",
         icon: "package",
-        items: ["electron-builder", "NSIS installer"],
-        note: "Windows installer + portable unpacked build."
+        items: ["electron-builder", "Multi-platform packaging"],
+        note: "Windows NSIS (.exe), macOS DMG & Zip, and Linux AppImage, DEB & tar.gz."
     },
     {
         label: "Asset Pipeline",

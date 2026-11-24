@@ -15,15 +15,16 @@ export const workflow: WorkflowStep[] = [
         step: "02",
         title: "Walks in",
         description:
-         "When the interval is up (and Do Not Disturb isn't active), it walks on screen and shows a message chosen for the current time of day."
+            // "When the interval is up (and Do Not Disturb isn't active), it walks on screen and shows a message chosen for the current time of day."
             // "When the interval is up (and Do Not Disturb isn't active), it walks on with a time-of-day water reminder — or a stretch, an eye break, or a breathing pause when stress relief is on."
+            "When your water interval is due — or after continuous keyboard and mouse desk work triggers a stress-relief break — AquaBuddy walks onto your screen."
     },
     {
         step: "03",
         title: "You respond — or don't",
-        description:  
-         "Click \"I Drank\" and it celebrates. Click \"Snooze\" and it waits patiently. Ignore it, and it gently checks in before walking off on its own."
-            // "\"I Drank\" and it celebrates. \"Snooze\" and it waits. On a stress-relief break, \"Take a Break\" or \"Later.\" Ignore either one, and it gently checks in before walking off."
+        description:
+            //  "Click \"I Drank\" and it celebrates. Click \"Snooze\" and it waits patiently. Ignore it, and it gently checks in before walking off on its own."
+            "Click \"I Drank\" and it celebrates. Click \"Snooze\" and it waits patiently. For stress breaks, pick \"Take a Break\" or \"Later.\" Ignore it, and it gently walks off."
     },
     {
         step: "04",

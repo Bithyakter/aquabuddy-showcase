@@ -11,7 +11,7 @@ import MagneticButton from "./ui/MagneticButton";
 import { site } from "@/lib/site";
 
 const trustPoints = [
-    { icon: MonitorSmartphone, label: "Windows desktop app" },
+    { icon: MonitorSmartphone, label: "Windows, macOS & Linux" },
     { icon: Code2, label: "TypeScript, strict mode" },
     { icon: Scale, label: "MIT licensed" }
 ];
@@ -42,7 +42,7 @@ export default function Hero() {
 
     return (
         <section id="top" className="relative overflow-hidden pt-40 pb-28 sm:pt-48 sm:pb-40">
-            {/* signature glow — the one place this page spends its color budget */}
+            {/* signature glow */}
             <div className="pointer-events-none absolute inset-0 -z-10">
                 <div className="absolute left-1/2 top-[-12%] h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-aqua-500/25 blur-[130px] animate-drift" />
                 <div className="absolute right-[6%] top-[26%] h-[360px] w-[360px] rounded-full bg-coral-500/12 blur-[110px]" />
@@ -65,7 +65,7 @@ export default function Hero() {
                         className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/80 px-4 py-1.5 text-xs font-medium text-aqua-300 shadow-sm"
                     >
                         <Sparkles size={13} />
-                        Desktop wellness companion for Windows
+                        Desktop wellness companion for Windows, macOS & Linux
                     </motion.div>
 
                     <motion.h1
@@ -110,7 +110,7 @@ export default function Hero() {
                             className="group flex items-center gap-2 rounded-full bg-aqua-400 px-7 py-3.5 text-sm font-semibold text-on-accent shadow-lg shadow-aqua-500/40 ring-2 ring-aqua-400/30 ring-offset-2 ring-offset-canvas transition-colors hover:bg-aqua-300"
                         >
                             <Download size={16} />
-                            Download for Windows
+                            Download AquaBuddy
                         </MagneticButton>
                         <a
                             href="#features"
@@ -167,16 +167,6 @@ export default function Hero() {
                                     className="relative z-10 w-[280px] sm:w-[360px]"
                                 >
                                     <WavingCharacter className="w-full" />
-
-                                     {/* <Image
-                                        src="/images/character/waving.png"
-                                        alt="AquaBuddy character waving hello"
-                                        width={380}
-                                        height={475}
-                                        priority
-                                        className="relative z-10 h-auto w-[280px] drop-shadow-[0_30px_60px_rgba(0,0,0,0.35)] sm:w-[360px]"
-                                    /> */}
-
                                 </motion.div>
                             ) : (
                                 <motion.div

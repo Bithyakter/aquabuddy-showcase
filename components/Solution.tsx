@@ -26,7 +26,7 @@ const points = [
     {
         icon: SlidersHorizontal,
         title: "Customizable schedules",
-        detail: "Water check-ins from 15 to 90 minutes, or an exact custom value. Stress-relief breaks after 30, 45, 60, or 90 minutes at your desk, inside the work hours you pick. Do Not Disturb expires on its own."
+        detail: "Water check-ins from 15 to 90 minutes. Stress-relief breaks monitor continuous keyboard and mouse activity — prompting you only when working non-stop at your desk, and resetting if you step away. Do Not Disturb expires on its own."
     },
     {
         icon: EyeOff,
@@ -81,59 +81,54 @@ export default function Solution() {
                                 viewport={{ once: true, margin: "-80px" }}
                                 transition={{ duration: 0.45, delay: (i % 3) * 0.06, ease: [0.22, 1, 0.36, 1] }}
                             >
-                            <motion.article
-                                role="button"
-                                tabIndex={0}
-                                aria-pressed={selected}
-                                onClick={() => toggle(i)}
-                                onKeyDown={(event) => {
-                                    if (event.key === "Enter" || event.key === " ") {
-                                        event.preventDefault();
-                                        toggle(i);
-                                    }
-                                }}
-                                animate={{ opacity: dimmed ? 0.5 : 1 }}
-                                whileHover={reduced ? undefined : { y: -8 }}
-                                transition={{ duration: 0.25 }}
-                                className={`group relative h-full cursor-pointer overflow-hidden rounded-[24px] border bg-surface px-6 pt-7 pb-6 text-left outline-none focus-visible:ring-2 focus-visible:ring-aqua-400 ${
-                                    selected
-                                        ? "border-aqua-400 shadow-lg shadow-aqua-500/15"
-                                        : "border-line hover:border-aqua-400/50"
-                                }`}
-                            >
-                                <span
-                                    aria-hidden
-                                    className={`absolute inset-x-0 top-0 origin-left transition-all duration-300 ${
-                                        selected ? "h-1.5" : "h-1 group-hover:h-1.5"
-                                    } ${accent ? "bg-aqua-400" : "bg-coral-400"} ${
-                                        selected ? "scale-x-100" : "scale-x-40 group-hover:scale-x-100"
-                                    }`}
-                                />
-                                <div className="flex items-start justify-between gap-4">
-                                    <motion.span
-                                        className={`flex h-9 w-9 items-center justify-center transition-colors ${
-                                            selected ? "text-aqua-400" : "text-text-muted group-hover:text-aqua-400"
+                                <motion.article
+                                    role="button"
+                                    tabIndex={0}
+                                    aria-pressed={selected}
+                                    onClick={() => toggle(i)}
+                                    onKeyDown={(event) => {
+                                        if (event.key === "Enter" || event.key === " ") {
+                                            event.preventDefault();
+                                            toggle(i);
+                                        }
+                                    }}
+                                    animate={{ opacity: dimmed ? 0.5 : 1 }}
+                                    whileHover={reduced ? undefined : { y: -8 }}
+                                    transition={{ duration: 0.25 }}
+                                    className={`group relative h-full cursor-pointer overflow-hidden rounded-[24px] border bg-surface px-6 pt-7 pb-6 text-left outline-none focus-visible:ring-2 focus-visible:ring-aqua-400 ${selected
+                                            ? "border-aqua-400 shadow-lg shadow-aqua-500/15"
+                                            : "border-line hover:border-aqua-400/50"
                                         }`}
-                                        whileHover={reduced ? undefined : iconMotion[i]}
-                                        transition={{ type: "spring", stiffness: 320, damping: 16 }}
-                                    >
-                                        <point.icon size={20} strokeWidth={1.75} />
-                                    </motion.span>
+                                >
                                     <span
-                                        className={`font-display text-4xl font-bold leading-none transition-all duration-300 ${
-                                            selected
-                                                ? "translate-y-0 text-aqua-400"
-                                                : "text-aqua-200 group-hover:-translate-y-1 group-hover:text-aqua-300"
-                                        }`}
-                                    >
-                                        0{i + 1}
-                                    </span>
-                                </div>
-                                <h3 className="mt-6 font-display text-lg font-semibold text-text-primary">
-                                    {point.title}
-                                </h3>
-                                <p className="mt-2 text-sm leading-relaxed text-text-secondary">{point.detail}</p>
-                            </motion.article>
+                                        aria-hidden
+                                        className={`absolute inset-x-0 top-0 origin-left transition-all duration-300 ${selected ? "h-1.5" : "h-1 group-hover:h-1.5"
+                                            } ${accent ? "bg-aqua-400" : "bg-coral-400"} ${selected ? "scale-x-100" : "scale-x-40 group-hover:scale-x-100"
+                                            }`}
+                                    />
+                                    <div className="flex items-start justify-between gap-4">
+                                        <motion.span
+                                            className={`flex h-9 w-9 items-center justify-center transition-colors ${selected ? "text-aqua-400" : "text-text-muted group-hover:text-aqua-400"
+                                                }`}
+                                            whileHover={reduced ? undefined : iconMotion[i]}
+                                            transition={{ type: "spring", stiffness: 320, damping: 16 }}
+                                        >
+                                            <point.icon size={20} strokeWidth={1.75} />
+                                        </motion.span>
+                                        <span
+                                            className={`font-display text-4xl font-bold leading-none transition-all duration-300 ${selected
+                                                    ? "translate-y-0 text-aqua-400"
+                                                    : "text-aqua-200 group-hover:-translate-y-1 group-hover:text-aqua-300"
+                                                }`}
+                                        >
+                                            0{i + 1}
+                                        </span>
+                                    </div>
+                                    <h3 className="mt-6 font-display text-lg font-semibold text-text-primary">
+                                        {point.title}
+                                    </h3>
+                                    <p className="mt-2 text-sm leading-relaxed text-text-secondary">{point.detail}</p>
+                                </motion.article>
                             </motion.div>
                         );
                     })}
