@@ -29,9 +29,7 @@ const iconMap: Record<Feature["icon"], LucideIcon> = {
     messageSquare: MessageSquare,
     mousePointerClick: MousePointerClick,
     move: Move,
-    save: Save,
-    palette: Palette,
-    laptop: Laptop
+    save: Save
 };
 
 const INTERVALS = ["15", "30", "45", "60", "90"];

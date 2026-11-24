@@ -1,5 +1,5 @@
 export interface Feature {
-    icon: "clock" | "activity" | "moon" | "smile" | "handWave" | "messageSquare" | "mousePointerClick" | "move" | "save" | "palette" | "laptop";
+    icon: "clock" | "activity" | "moon" | "smile" | "handWave" | "messageSquare" | "mousePointerClick" | "move" | "save";
     title: string;
     description: string;
 }
@@ -30,18 +30,6 @@ export const features: Feature[] = [
         title: "Stress-relief breaks",
         description:
             "Walk-in breaks for stretching, eye rest, or deep breathing. Powered by continuous keyboard and mouse activity detection — triggering only when you've been working non-stop and resetting if you step away from your desk."
-    },
-    {
-        icon: "palette",
-        title: "Visual themes & character skins",
-        description:
-            "Toggle between the classic companion and Character 2 (the male companion skin) directly from tray preferences — with matching walk, wave, and wellness break sprites."
-    },
-    {
-        icon: "laptop",
-        title: "Cross-platform support",
-        description:
-            "Built natively for Windows (.exe), macOS (.dmg), and Linux (.AppImage, .deb, .tar.gz) with transparent click-through windowing tailored to each OS."
     },
     {
         icon: "moon",
