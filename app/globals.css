@@ -41,7 +41,7 @@
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-drift: drift 14s ease-in-out infinite;
-  --animate-hand-wave: hand-wave 900ms ease-in-out infinite;
+  --animate-hand-wave: hand-wave 1.2s ease-in-out infinite;
 }
 
 /* Light is the default — no .dark class needed to render it. Values are a
@@ -130,10 +130,10 @@
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(-16deg);
+    transform: rotate(-7deg);
   }
   75% {
-    transform: rotate(18deg);
+    transform: rotate(8deg);
   }
 }
 
