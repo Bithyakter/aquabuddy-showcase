@@ -4,11 +4,11 @@ export const site = {
     description:
         "AquaBuddy is a cross-platform desktop companion for Windows, macOS, and Linux — a character that walks onto your screen with a hydration reminder, and, when you turn it on, a short stretch, eye break, or breathing pause.",
     url: "https://aquabuddy-showcase.vercel.app",
-    githubUrl: "https://github.com/Bithyakter/aqua-buddy",
-    downloadUrl: "https://github.com/Bithyakter/aqua-buddy/releases/tag/v1.1.1",
+    githubUrl: "https://github.com/Bithyakter/aquabuddy-showcase",
+    downloadUrl: "https://github.com/Bithyakter/aquabuddy-showcase/releases",
     author: {
         name: "Bithy Akter",
-        portfolioUrl: "#"
+        portfolioUrl: "https://github.com/Bithyakter"
     },
     keywords: [
         "desktop hydration app",
