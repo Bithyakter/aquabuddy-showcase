@@ -6,6 +6,7 @@ export const site = {
     url: "https://aquabuddy-showcase.vercel.app",
     githubUrl: "https://github.com/Bithyakter/aquabuddy-showcase",
     downloadUrl: "https://github.com/Bithyakter/aquabuddy-showcase/releases",
+    userManualUrl: "/AquaBuddy-User-Manual.pdf",
     author: {
         name: "Bithy Akter",
         portfolioUrl: "https://github.com/Bithyakter"

@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { BookOpen, ArrowUpRight, FileText } from "lucide-react";
 import Container from "./ui/Container";
 import SectionHeading from "./ui/SectionHeading";
 import Reveal from "./ui/Reveal";
 import { workflow } from "@/data/workflow";
+import { site } from "@/lib/site";
 
 export default function HowItWorks() {
     return (
@@ -46,6 +48,43 @@ export default function HowItWorks() {
                         </Reveal>
                     ))}
                 </div>
+
+                <Reveal delay={0.35} className="mt-14">
+                    <div className="relative overflow-hidden rounded-3xl border border-aqua-500/25 bg-gradient-to-r from-surface/90 via-surface to-aqua-500/10 p-6 sm:p-8 shadow-sm">
+                        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+                            <div className="flex items-start gap-4">
+                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-aqua-400/30 bg-aqua-500/15 text-aqua-300">
+                                    <FileText size={24} />
+                                </div>
+                                <div>
+                                    <div className="flex flex-wrap items-center gap-2.5">
+                                        <h4 className="font-display text-lg font-bold text-text-primary">
+                                            AquaBuddy Illustrated User Manual
+                                        </h4>
+                                        <span className="rounded-full bg-aqua-400/15 border border-aqua-400/30 px-2.5 py-0.5 text-xs font-semibold text-aqua-300">
+                                            10 Pages · PDF Guide
+                                        </span>
+                                    </div>
+                                    <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-text-secondary">
+                                        Step-by-step instructions with 10 high-resolution screenshots covering desktop placement, water reminders, 30s/60s/120s escalation, continuous work idle rules, custom intervals, and character skin switching.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex shrink-0 items-center">
+                                <a
+                                    href={site.userManualUrl}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="flex items-center gap-2 rounded-full bg-aqua-400 px-6 py-3 text-sm font-semibold text-on-accent shadow-md shadow-aqua-500/30 transition-all hover:bg-aqua-300 hover:shadow-aqua-500/50"
+                                >
+                                    <BookOpen size={16} />
+                                    Read User Manual
+                                    <ArrowUpRight size={15} />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </Reveal>
             </Container>
         </section>
     );
