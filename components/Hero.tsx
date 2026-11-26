@@ -112,7 +112,7 @@ export default function Hero() {
                             <Download size={16} />
                             Download AquaBuddy
                         </MagneticButton>
-                        <a
+                        {/* <a
                             href={site.userManualUrl}
                             target="_blank"
                             rel="noreferrer noopener"
@@ -120,7 +120,7 @@ export default function Hero() {
                         >
                             <BookOpen size={16} className="text-aqua-400" />
                             User Manual
-                        </a>
+                        </a> */}
                         <a
                             href="#features"
                             className="group flex items-center gap-2 rounded-full border border-line px-6 py-3.5 text-sm font-semibold text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"

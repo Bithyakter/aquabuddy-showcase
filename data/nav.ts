@@ -9,6 +9,5 @@ export const navItems: NavItem[] = [
     // { label: "Breaks", href: "#breaks" },
     { label: "Showcase", href: "#showcase" },
     { label: "Tech Stack", href: "#tech-stack" },
-    { label: "User Manual", href: "/AquaBuddy-User-Manual.pdf" },
     // { label: "Engineering", href: "#engineering" }
 ];

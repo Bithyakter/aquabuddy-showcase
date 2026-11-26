@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BookOpen } from "lucide-react";
 import Container from "./ui/Container";
 import { GitHubMark } from "./ui/icons";
 import { site } from "@/lib/site";
@@ -18,6 +19,14 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col gap-3 text-sm">
+                    <a
+                        href={site.userManualUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="flex items-center gap-1.5 text-text-secondary transition-colors hover:text-aqua-300"
+                    >
+                        <BookOpen size={15} /> User Manual (PDF)
+                    </a>
                     <a
                         href={site.githubUrl}
                         target="_blank"

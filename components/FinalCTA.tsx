@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, BookOpen } from "lucide-react";
 import Container from "./ui/Container";
 import Reveal from "./ui/Reveal";
 import { GitHubMark } from "./ui/icons";
@@ -41,6 +41,15 @@ export default function FinalCTA() {
                         <Download size={16} />
                         Download AquaBuddy
                     </MagneticButton>
+                    {/* <a
+                        href={site.userManualUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="group flex items-center gap-2 rounded-full border border-line bg-surface/80 px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"
+                    >
+                        <BookOpen size={16} className="text-aqua-400" />
+                        User Manual
+                    </a> */}
                     <a
                         href="#top"
                         className="group flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-aqua-400/60 hover:text-aqua-300"

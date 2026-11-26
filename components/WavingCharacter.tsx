@@ -1,4 +1,8 @@
 import Image from "next/image";
+import defaultBody from "@/public/images/character/waving-body.png";
+import defaultHand from "@/public/images/character/waving-hand.png";
+import char2Body from "@/public/images/character-2/waving-body.png";
+import char2Hand from "@/public/images/character-2/waving-hand.png";
 
 // Reuses the actual split assets from AquaBuddy's own character engines
 // (waving-body.png + waving-hand.png, see AquaBuddy/src/renderer/character.ts)
@@ -7,18 +11,18 @@ const SKIN_CONFIGS = {
     "default": {
         aspect: "aspect-[447/558]",
         native: { width: 447, height: 558 },
-        handCrop: { x: 85, y: 0, w: 88, h: 210 },
-        transformOrigin: "74% 93%",
-        body: "/images/character/waving-body.png",
-        hand: "/images/character/waving-hand.png"
+        handCrop: { x: 128, y: 78, w: 56, h: 74 },
+        transformOrigin: "52.7% 82.4%",
+        body: defaultBody,
+        hand: defaultHand
     },
     "character-2": {
         aspect: "aspect-[389/924]",
         native: { width: 389, height: 924 },
         handCrop: { x: 280, y: 155, w: 115, h: 130 },
         transformOrigin: "45.2% 84.6%",
-        body: "/images/character-2/waving-body.png",
-        hand: "/images/character-2/waving-hand.png"
+        body: char2Body,
+        hand: char2Hand
     }
 } as const;
 
