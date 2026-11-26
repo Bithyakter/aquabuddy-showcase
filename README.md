@@ -1,109 +1,83 @@
-# 💧 AquaBuddy — Project Showcase Website
+# 💧 AquaBuddy — Your Animated Desktop Wellness Companion
 
-A portfolio case-study and interactive showcase website for [AquaBuddy](https://github.com/Bithyakter/aqua-buddy) — a cross-platform desktop hydration and wellness companion for **Windows**, **macOS**, and **Linux**.
+[![Live Showcase](https://img.shields.io/badge/Live_Showcase-Visit_Website-06b6d4?style=for-the-badge&logo=vercel)](https://aquabuddy-showcase.vercel.app)
+[![Download App](https://img.shields.io/badge/Download-Desktop_App-0284c7?style=for-the-badge&logo=windows)](https://github.com/Bithyakter/aquabuddy-showcase/releases)
+[![User Manual](https://img.shields.io/badge/User_Manual-PDF_Guide-0ea5e9?style=for-the-badge&logo=adobeacrobatreader)](https://aquabuddy-showcase.vercel.app/AquaBuddy-User-Manual.pdf)
 
-Built to present the engineering, interaction design, and product decisions behind the app. Every feature, interaction, and technical note on the site reflects actual production code in the AquaBuddy repository.
+> **"A smarter, friendlier way to stay hydrated and refreshed every day."**
 
----
-
-## 🌟 What This Showcase Features
-
-- **Cross-Platform Showcase**: Highlights native multi-platform packaging for Windows (`.exe`), macOS (`.dmg`, `.zip`), and Linux (`.AppImage`, `.deb`, `.tar.gz`) with OS-tailored click-through windowing.
-- **Interactive Character Skin Switcher**: Live browser showcase allowing visitors to toggle between **Classic AquaBuddy** and **Character 2 (Male Companion)** and preview all 7 interaction scenes:
-  - Idle
-  - Reminders (with real wrist-pivot layered hand-wave animations)
-  - Celebrations ("I Drank")
-  - Snooze reactions
-  - Shoulder stretching
-  - 20-20-20 eye breaks
-  - Mindful deep breathing
-- **Continuous Work Detection for Breaks**: Explains the idle detection architecture — stress-relief breaks monitor active keyboard and mouse input, prompting only after continuous desk work and auto-resetting if the user steps away, goes to lunch, or puts the computer to sleep.
-- **True-to-Code Technical Deep Dives**: Outlines Electron's multi-process architecture, strict `contextBridge` sandboxing, border-flood-fill Jimp sprite extraction, and local JSON persistence.
+Most hydration apps send boring notification popups that get lost in the noise or swiped away without a second thought. **AquaBuddy** changes that — bringing a cheerful animated companion directly to your desktop. Whenever it's time for a water break, your companion gently walks onto your screen, waves hello, and waits to cheer you on as you take a healthy sip!
 
 ---
 
-## 🛠️ Stack
+## ✨ Why You'll Love AquaBuddy
 
-- **Framework**: [Next.js 16](https://nextjs.org) (App Router, Turbopack)
-- **Language**: TypeScript (strict mode)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com) (CSS-first `@theme` design tokens in `app/globals.css`)
-- **Animation**: [Framer Motion](https://www.framer.com/motion/) for micro-interactions, spring transitions, and character wrist-pivot simulations
-- **Icons**: [Lucide React](https://lucide.dev)
+### 🚶‍♂️ A Living Companion on Your Screen
+Instead of cold text alerts, an animated character walks onto your screen, smiles, and waves at you. It makes staying healthy feel like a fun, positive habit rather than a chore.
 
----
+### 🥤 Simple, Stress-Free Interactions
+- **"I Drank!"**: Give your companion a click when you take a drink to see a joyful celebration.
+- **"Snooze"**: In the middle of an important task or meeting? Snooze with one click and your companion will politely check back later.
 
-## 📁 Project Structure
+### 🧘 Complete Daily Wellness Breaks
+Staying healthy at your desk is about more than just water. AquaBuddy includes gentle, optional wellness pauses:
+- **Shoulder & Neck Stretches** to relieve posture tension.
+- **20-20-20 Eye Breaks** to reduce digital eye strain.
+- **Deep Breathing Exercises** to reset your focus and lower stress.
 
-```
-app/
-├── layout.tsx          # Root layout, theme provider, and font configuration
-├── page.tsx            # Composition of showcase sections
-├── globals.css         # Tailwind v4 theme tokens and animations
-├── sitemap.ts          # Search engine sitemap
-├── robots.ts           # Crawler directives
-└── opengraph-image.tsx # Dynamic Open Graph card generation
+### 🎭 Pick Your Favorite Companion
+Choose between different companion styles to fit your desk aesthetic — toggle easily between **Classic AquaBuddy** and **Character 2** at any time.
 
-components/
-├── Hero.tsx            # Main value proposition, interactive bubble reaction, and CTAs
-├── AppShowcase.tsx     # In-browser desktop replica with skin switcher (Classic & Character 2)
-├── Features.tsx        # Core features grid and interactive schedule & break cards
-├── WavingCharacter.tsx # Layered sprite animation engine supporting multi-character wrist pivots
-├── HowItWorks.tsx      # Step-by-step user interaction loop
-├── Solution.tsx        # Problem vs. Desktop Companion architectural rationale
-├── TechStack.tsx       # Layered runtime, packaging, and asset tooling breakdown
-├── FutureImprovements.tsx # Directional product roadmap
-└── ui/                 # Reusable UI primitives (Container, SectionHeading, Reveal, MagneticButton)
-
-data/
-├── features.ts         # Verified feature specifications
-├── highlights.ts       # Engineering highlights
-├── techStack.ts        # Runtime, security, and packaging breakdown
-├── workflow.ts         # User journey and activity detection loop
-├── future.ts           # Product roadmap ideas
-└── nav.ts              # Navigation items
-
-public/
-└── images/
-    ├── character/      # Classic AquaBuddy sprites (standing, waving, breaks, celebration)
-    ├── character-2/    # Character 2 (Male) sprites and waving layers
-    └── logo.png        # Brand asset
-```
-
-> **Data-Driven Architecture**: Section copy lives in structured `data/*.ts` files, decoupling content from UI components and making updates seamless without altering layout JSX.
+### 🧠 Smart & Respectful of Your Focus
+AquaBuddy only checks in when you're actively using your computer. If you step away for lunch or put your computer to sleep, it notices and pauses your timer so you never return to a backlog of reminders.
 
 ---
 
-## 🚀 Getting Started Locally
+## 🌐 Explore the Showcase Website
 
-```bash
-# Install dependencies
-npm install
+Visit the live showcase at **[aquabuddy-showcase.vercel.app](https://aquabuddy-showcase.vercel.app)** to:
 
-# Start development server with Turbopack
-npm run dev
-
-# Build production bundle and run type checking
-npm run build
-
-# Run linter
-npm run lint
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.
+- 🎮 **Try the Live Interactive Demo**: Experience the real character animations, switch character skins, and test out the reminder bubble right in your web browser.
+- 📖 **Read the User Manual**: View our beginner-friendly, illustrated 10-page guide covering setup, daily routines, customization, and helpful wellness tips.
+- 💻 **Get AquaBuddy for Desktop**: Find downloads for Windows, macOS, and Linux.
 
 ---
 
-## 🌐 Deployment
+## 🚀 Running the Showcase Locally
 
-The project is optimized for deployment on [Vercel](https://vercel.com):
+If you'd like to run this website on your own computer:
 
-1. Push your changes to GitHub or your Git provider.
-2. Import the repository into Vercel.
-3. Next.js will automatically detect the build settings (`next build`).
-4. To configure your custom domain, update `url` in `lib/site.ts` so Open Graph tags, canonical URLs, and the sitemap resolve correctly.
+1. **Clone or download the repository:**
+   ```bash
+   git clone https://github.com/Bithyakter/aquabuddy-showcase.git
+   cd aquabuddy-showcase
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the site:**
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser and enjoy!
 
 ---
 
-## 📄 License
+## 📖 Helpful Links
 
-MIT © [Bithy Akter](https://github.com/Bithyakter)
+- 🌐 **Live Website**: [aquabuddy-showcase.vercel.app](https://aquabuddy-showcase.vercel.app)
+- 📥 **Download AquaBuddy**: [Latest Releases](https://github.com/Bithyakter/aquabuddy-showcase/releases)
+- 📘 **User Manual**: [Open AquaBuddy User Manual (PDF)](https://aquabuddy-showcase.vercel.app/AquaBuddy-User-Manual.pdf)
+- 💬 **Feedback & Issues**: [Report an issue or suggest an idea](https://github.com/Bithyakter/aquabuddy-showcase/issues)
+
+---
+
+## 💖 Made with Care
+
+Created by **[Bithy Akter](https://github.com/Bithyakter)** to bring health, balance, and a smile to your everyday computer desk routine.
+
+*Open source under the [MIT License](LICENSE).*
